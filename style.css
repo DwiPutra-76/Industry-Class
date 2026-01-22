@@ -1,0 +1,14 @@
+body {
+    background-color: lightgray;
+    background-image: linear-gradient(to left, black, white);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 1rem;
+}
+
+p {
+    color : green;
+}
