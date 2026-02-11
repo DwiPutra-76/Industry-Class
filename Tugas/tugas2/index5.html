@@ -4,8 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tugas 2</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 600px;
+            height: 350px;
+        }
+        .kolom {
+            width: 120px;
+            height: 245px;
+            display: flex;
+            flex-direction: column;
+        }
+        .box {
+            flex: 1;
+        }
+        .merah {
+            background-color: red;
+        }
+        .biru {
+            background-color: blue;
+        }
+        .hijau {
+            background-color: green;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="kolom">
+            <div class="box merah"></div>
+            <div class="box hijau"></div>
+        </div>
+        <div class="kolom">
+            <div class="box biru"></div>
+            <div class="box merah"></div>
+        </div>
+        <div class="kolom">
+            <div class="box hijau"></div>
+            <div class="box biru"></div>
+        </div>
+    </div>
 </body>
 </html>

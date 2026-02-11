@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kalkulator</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Biar full tinggi layar */
+    margin: 0;
+}
+
+.card {
+    width: 650px; /* Lebih besar */
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+input, select {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+select {
+    width: 100px;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #198754;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #157347;
+}
+
+.hasil {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Kalkulator</h2>
+
+    <div class="input-group">
+        <input type="number" id="angka1" placeholder="Angka 1">
+
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">×</option>
+            <option value="/">÷</option>
+        </select>
+
+        <input type="number" id="angka2" placeholder="Angka 2">
+
+        <button onclick="hitung()">Hitung</button>
+    </div>
+
+    <div class="hasil" id="hasil">0</div>
+</div>
+
+<script>
+function hitung() {
+    var a = parseFloat(document.getElementById("angka1").value);
+    var b = parseFloat(document.getElementById("angka2").value);
+    var op = document.getElementById("operator").value;
+    var hasil = 0;
+
+    if (isNaN(a) || isNaN(b)) {
+        hasil = "Input tidak valid!";
+    } else {
+        switch(op) {
+            case "+": hasil = a + b; break;
+            case "-": hasil = a - b; break;
+            case "*": hasil = a * b; break;
+            case "/":
+                hasil = b !== 0 ? a / b : "Tidak bisa bagi 0!";
+                break;
+        }
+    }
+
+    document.getElementById("hasil").innerText = hasil;
+}
+</script>
+
+</body>
+</html>

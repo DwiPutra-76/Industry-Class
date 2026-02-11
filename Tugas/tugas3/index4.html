@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>To Do List</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    width: 600px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
+
+.tambah { background: #198754; }
+.muat { background: #0d6efd; }
+.hapus { background: #dc3545; }
+
+ul {
+    margin-top: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>To Do List</h2>
+
+    <div class="input-group">
+        <input type="text" id="todoInput" placeholder="Masukkan kegiatan">
+        <button class="tambah" onclick="tambahTodo()">Tambah</button>
+        <button class="muat" onclick="muatData()">Muat Data</button>
+        <button class="hapus" onclick="hapusData()">Hapus Data</button>
+    </div>
+
+    <ul id="todoList"></ul>
+</div>
+
+<script>
+function tambahTodo() {
+    const input = document.getElementById("todoInput");
+    const value = input.value.trim();
+
+    if (value === "") return;
+
+    let todos = JSON.parse(localStorage.getItem("todos")) || [];
+    todos.push(value);
+    localStorage.setItem("todos", JSON.stringify(todos));
+
+    tampilkanTodos();
+    input.value = "";
+}
+
+function tampilkanTodos() {
+    const list = document.getElementById("todoList");
+    list.innerHTML = "";
+
+    let todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+    todos.forEach(todo => {
+        const li = document.createElement("li");
+        li.textContent = todo;
+        list.appendChild(li);
+    });
+}
+
+function muatData() {
+    tampilkanTodos();
+}
+
+function hapusData() {
+    localStorage.removeItem("todos");
+    tampilkanTodos();
+}
+</script>
+
+</body>
+</html>

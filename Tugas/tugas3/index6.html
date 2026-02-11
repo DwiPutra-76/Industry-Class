@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas AJAX</title>
+
+    <!-- CDN jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        img {
+            width: 150px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Gallery AJAX</h2>
+    <div id="gallery"></div>
+
+    <script>
+        $(document).ready(function(){
+
+            $.ajax({
+                url: "https://jsonplaceholder.typicode.com/photos?_limit=10",
+                method: "GET",
+                success: function(data){
+
+                    data.forEach(function(photo){
+                        $("#gallery").append(
+                            `<img src="${photo.thumbnailUrl}" alt="${photo.title}">`
+                        );
+                    });
+
+                },
+                error: function(){
+                    alert("Gagal mengambil data");
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
