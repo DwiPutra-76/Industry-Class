@@ -1,0 +1,88 @@
+body {
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.input {
+    padding: 10px 10px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 5px;
+}
+.input-contain {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.btn-submit {
+    background-color: #1a78f3;
+    color: #fff;
+    padding: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.btn-submit:hover {
+    background-color: #1574f0;
+}
+.card {
+    background-color: #fff;
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /*vh = viewport height = 1080 px*/
+    overflow: hidden;
+    flex-direction: column;
+}
+.logo {
+    width: 300px;
+}
+.login-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 0 20px 0;
+}
+form {
+    width: 100%;
+}
+.forgot-acc:hover {
+    text-decoration: underline;    
+}
+.forgot-acc {
+    text-decoration: none;
+    color: #1a78f3;
+    font-size: 14px;
+    font-weight: 600;
+}
+.atau {
+    text-align: center;
+    font-size: 14px;
+    color: #838383;
+}
+.create-acc {
+    background-color: #42b72a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    align-items: center;
+    font-size: 16px;
+}
+.create-acc:hover {
+    background-color: #33961f;
+}
+.contain-create {
+    text-align: center;
+    margin-top: 20px;
+}
