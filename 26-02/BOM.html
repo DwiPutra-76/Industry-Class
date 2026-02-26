@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajara BOM</title>
+</head>
+<body>
+    <h1>BOM</h1>
+    <button onclick="goBack()">Kembali</button>
+    <button onclick="goForward()">Maju</button>
+    <a href="index.html">Pindah halaman</a>
+
+    <script>
+        //Navigator obj
+        console.log(window.navigator.userAgent);
+        console.log(window.navigator.appVersion);
+        console.log(window.navigator.platform);
+        console.log(window.navigator.language);
+        console.log(window.navigator.languages);
+
+        //screen obj
+        console.log("lebar layar: " + screen.width);
+        console.log("tinggi layar: " + screen.height);
+        console.log("resolusi x" + screen.availWidth);
+        console.log("resolusi y" + screen.availHeight);
+        if (screen.orientation.type == "portrait-primary") {
+            console.log("layar dalam posisi lanscape")
+        }
+
+        //location obj
+        console.log(location.href);
+
+        //History obj
+        function goForward() {
+            history.forward();
+        }
+        function goBack() {
+            history.back();
+        }
+    </script>
+</body>
+</html>

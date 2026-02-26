@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JS</title>
+</head>
+<body>
+    <h4>ini halaman web</h4>
+    
+    <button onclick="goBack()">Kembali</button>
+    <button onclick="goForward()">Maju</button>
+    <a href="BOM.html">Pindah halaman</a>
+    <script>
+        console.log("Hello World!");
+
+        let nama = 'Ilham Hama';
+        const phi = 3.14;
+
+        console.log(nama);
+        console.log(phi);
+
+        nama = 'Hama Ilham';
+        console.log(nama);
+
+        phi = 1.22;
+        console.log(phi);
+
+         function goForward() {
+            history.forward();
+        }
+        function goBack() {
+            history.back();
+        }
+    </script>
+</body>
+</html>
