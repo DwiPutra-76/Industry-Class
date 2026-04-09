@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capturing</title>
+</head>
+<body>
+    <form action="">
+        FORM
+        <div>
+            DIV
+            <p>
+                P
+            </p>
+        </div>
+    </form>
+
+    <script>
+        for (let element of document.querySelectorAll('*')) {
+            element.addEventListener('click', e => alert(`Penangkapan element ${element.tagName}`), true);
+            element.addEventListener('click', e => alert(`Penggelembungan element ${element.tagName}`));
+        }
+    </script>
+</body>
+</html>

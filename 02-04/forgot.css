@@ -1,0 +1,89 @@
+body {
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input {
+    padding: 20px 5px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    width: 98%;
+    border-radius: 5px;
+}
+.text {
+    font-size: 23px;
+    text-align: justify;
+    font-weight: 100;
+}
+.input-contain {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.search {
+    background-color: #1a78f3;
+    color: #fff;
+    padding: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 80px;
+    height: 35px;
+    margin: 10px 5px 0 5px;
+    font-weight: 600;
+}
+.search:hover {
+    background-color: #1574f0;
+}
+.cancel {
+    background-color: #c0c0c0;
+    color: #5c5c5c;
+    padding: 10px 0 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 80px;
+    margin: 10px 5px 0 5px;
+    height: 35px;
+    font-weight: 600;
+    text-align: center;
+}
+.button {
+    display: flex;
+    justify-content: flex-end;
+}
+.card {
+    background-color: #fff;
+    width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    overflow-y: hidden;
+    flex-direction: column;
+}
+.judul {
+    font-size: 24px;
+}
+.card hr {
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: 30px;
+}
+.button a {
+    text-decoration: none;
+    color: #5c5c5c;
+}
+.logo {
+    width: 300px;
+}

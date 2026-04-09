@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Local Storage</title>
+</head>
+<body>
+    <h1>Belajar local storage</h1>
+    <button type="button" onclick="simpanData()">Simpan</button>
+    <button type="button" onclick="tampilData()">Tampil</button>
+    <button type="button" onclick="hapusData()">Hapus</button>
+    <button type="button" onclick="hapusSemuaData()">Hapus semua</button>
+
+    <script>
+        function simpanData() {
+            // untuk menyimpan data di local storage, kita harus mengubah data menjadi string terlebih dahulu
+            // JSON.stringify() digunakan untuk mengubah data menjadi string
+            localStorage.setItem('nama', JSON.stringify(['Ilham', 'Hama']));
+            localStorage.setItem('umur', 16);
+        }
+
+        function tampilData() {
+            let nama = localStorage.getItem('nama');
+            let umur = localStorage.getItem('umur');
+            console.log(JSON.parse(nama)[0]);
+            console.log(umur);
+        }
+
+        function hapusData() {
+            localStorage.removeItem('nama')
+        }
+
+        function hapusSemuaData() {
+            localStorage.clear();
+        }
+    </script>
+</body>
+</html>

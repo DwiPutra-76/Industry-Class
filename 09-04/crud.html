@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CRUD (Create, Read, Update, Delete)</h1>
+
+    <form action="" id="form">
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" placeholder="Masukkan Nama">
+
+        <button type="submit">Simpan</button>
+    </form>
+
+    <button type="button" onclick="tampilNama()">Tampilkan Nama</button>
+    <h1 id="tampil-nama"></h1>
+
+    <script>
+        const form = document.getElementById('form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let nama = document.getElementById('nama').value;
+            console.log(nama)
+            localStorage.setItem('nama', nama)
+        });
+
+        function tampilNama() {
+            let nama = localStorage.getItem('nama');
+            const elementTampil = document.getElementById('tampil-nama')
+            elementTampil.textContent = 'Halo ' + nama;
+        }
+    </script>
+</body>
+</html>
