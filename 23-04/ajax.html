@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                type:'get',
+                url:'https://jsonplaceholder.typicode.com/posts',
+                success:function(r) {
+                    let data = [];
+                    for(let i = 0; i < 10; i++) {
+                        data.push(`
+                        <h1>${r[i].title}</h1>
+                        <p>${r[i].body}</p>
+                        <hr>
+                        `)
+                    }
+
+                    $('#content').html(data);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
