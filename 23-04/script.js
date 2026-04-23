@@ -11,8 +11,4 @@ $(document).ready(function () {
     },
   });
 });
-
-i = 8;
-y = 10;
-console.log(i + y);
 // hahahahha
